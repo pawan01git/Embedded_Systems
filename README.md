@@ -1,1 +1,1 @@
-a
+This repository contains codes for Cortex M4 microcontroller based Texas Instruments development board TM4c123gxl. Here you will find example projects using peripherals General pupose input/output, Phase locked loop, Universal Asynchronous Receiver Transmitter, , SysTick Timer, Analog to Digital converter, Digital to Analog converter. Keil microvision version 4.0 has been used to run and debug the code.
