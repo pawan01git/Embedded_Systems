@@ -55,16 +55,16 @@ unsigned long next[10];// next states
 typedef const struct State StateType; // alias name for struct variable
 //typedef StateType *StatePtr; // pointer, not sure for what
 
-#define GS  0 //0x21,0x02
-#define GW 1 // 0x0C,0x02
-#define GP 2 //0x24,0x08
-#define WS 3 //0x22,0x02
-#define WW 4 //0x14,0x02
-#define WP 5 //0x24,0x02
-#define b1_on 6 //0x24,0x02
-#define b1_of 7 //0x24,0x0
-#define b2_on 8 //0x24,0x02
-#define b2_of 9 //0x24,0x0
+#define GS  0 //state S0 goSouth PortB out: 0x21,PortF out: 0x02
+#define GW 1 // state S1, goWest ,PortB out: 0x0C, PortF out: 0x02
+#define GP 2 //state S2, goPedestrian, PortB out: 0x24,PortF out: 0x08 
+#define WS 3 // state S3, waitSouth, PortB out: 0x22, PortF out:0x02
+#define WW 4 //state S4, waitWest, PortB out: 0x14,Port F out: 0x02
+#define WP 5 //state S5, waitPedestrian PortB out: 0x24, PortF out: 0x02
+#define b1_on 6 //state S6, blink on, PortB out: 0x24,PortF out: 0x02
+#define b1_of 7 //state S7, blink ff, PortB out: 0x24,PortF out: 0x00
+#define b2_on 8 //state S6, blink on, PortB out: 0x24,PortF out: 0x02
+#define b2_of 9 //state S7, blink ff, PortB out: 0x24,PortF out: 0x00
 
 // defining output and input address
 #define Output1 (*((volatile unsigned long *)0x400050FC)) 
