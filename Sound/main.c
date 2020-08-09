@@ -85,7 +85,7 @@ void Switch_Init(void)
 int main(void)
 { 
 	
-		PLL_Init(); // calling port F initialization
+    PLL_Init(); // calling port F initialization
     Sound_Init(); // calling sound initialization dunction
     Switch_Init(); // calling switch initialization function
     while (1)
@@ -96,4 +96,3 @@ int main(void)
     }
 }
 void SystemInit() {}; // System specific function executed before main
-
