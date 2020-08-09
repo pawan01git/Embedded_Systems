@@ -1,0 +1,13 @@
+*.bak
+*.bak
+*.o
+*.d
+*.crf
+*.map
+*.dep
+*.Pawan
+*.S
+*.uvopt
+*.htm
+*.lnp
+*.lst
