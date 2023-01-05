@@ -31,7 +31,7 @@
 #define GPIO_PORTF_PUR_R (*((volatile unsigned long *)0x40025510))   // pull down control registeron Port F
 #define GPIO_PORTF_DIR_R (*((volatile unsigned long *)0x40025400))   // data direction control register Port F
 #define GPIO_PORTF_DEN_R (*((volatile unsigned long *)0x4002551C))   //digital enable control register on Port F
-
+#define RED 0x02 //for red color as defined for evaluation board in datasheet
 //Port Initialization
 
 void PortF_Init(void)
@@ -70,7 +70,7 @@ int main(void)
         }
         else if ((SW1 == 0x00) && (SW2 == 0x01)) // Only SW1 pressed
         {
-            LED  ^= 0x02; // Red LED
+            LED  ^= RED; // Red LED
             Delay(100); // 100 ms delay
         }
         else if ((SW1 == 0x10) && (SW2 == 0x00))// Only SW2 pressed
@@ -101,4 +101,5 @@ void Delay(int time)
 }
 
 void SystemInit(void){}; // A function that can execute before main
+
 
