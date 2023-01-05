@@ -25,7 +25,7 @@
 #define GPIO_PORTF_CR_R (*((volatile unsigned long *)0x40025524))    //offset address to enable commit on Port F
 #define GPIO_PORTF_PCTL_R (*((volatile unsigned long *)0x4002552C))  // address of Port control register on Port F
 #define GPIO_PORTF_DATA_R (*((volatile unsigned long *)0x400253FC))  // Port F data register address
-#define RGB (*((volatile unsigned long *)0x40025038))                // Register address of 3 LEDs
+#define LED (*((volatile unsigned long *)0x40025038))                // Register address of 3 LEDs
 #define GPIO_PORTF_AFSEL_R (*((volatile unsigned long *)0x40025420)) // offset address of alternate function register on Port F
 #define GPIO_PORTF_AMSEL_R (*((volatile unsigned long *)0x40025528)) // register to control analog functionon Port F
 #define GPIO_PORTF_PUR_R (*((volatile unsigned long *)0x40025510))   // pull down control registeron Port F
@@ -65,23 +65,23 @@ int main(void)
 
         if ((SW1 == 0x10) && (SW2 == 0x01)) // no switches pressed
         {
-            RGB = 0x00; // turning off LED
+            LED = 0x00; // turning off LED
             Delay(100);  // 100 ms delay
         }
         else if ((SW1 == 0x00) && (SW2 == 0x01)) // Only SW1 pressed
         {
-            RGB  ^= 0x02; // Red LED
+            LED  ^= 0x02; // Red LED
             Delay(100); // 100 ms delay
         }
         else if ((SW1 == 0x10) && (SW2 == 0x00))// Only SW2 pressed
         {
-            RGB ^= 0x04; // Blue LED
+            LED ^= 0x04; // Blue LED
             Delay(100); // 100 ms delay
         }
 
         else if ((SW1 == 0x00) && (SW2 == 0x00)) // Both SW1 and SW2 pressed
         {
-            RGB ^= 0x08; // Green LED
+            LED ^= 0x08; // Green LED
             Delay(100); // 100 ms delay
         }
     }
